@@ -4,8 +4,8 @@ class WinnersController < ApplicationController
 
   def winner
     @pool = Student.where(wins: 0).ids
-    session[:absent] ||= []
-    @pool -= session[:absent]
+    #session[:absent] ||= []
+    #@pool -= session[:absent]
     @winner_id = @pool.shuffle.shuffle.shuffle.sample
     if @winner_id.nil?
       @none = "No one is here"
@@ -25,8 +25,8 @@ class WinnersController < ApplicationController
       @winner.save
       redirect_to root_path
     elsif @here = 'n'
-      session[:absent] ||= []
-      session[:absent] += [@winner.id]
+      # session[:absent] ||= []
+      # session[:absent] += [@winner.id]
       redirect_to winner_path
     end
   end

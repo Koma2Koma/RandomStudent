@@ -10,6 +10,6 @@
 <% if @winner %>
   <h3>Present?</h3>
   <%= link_to "Yep", present_path(@winner, here: 'y'), class: "btn btn-lg btn-success" %>
-  <%= link_to "Nope", present_path(@winner, here: 'n'), class: "btn btn-lg btn-danger" %>
+  <%= link_to "Nope", root_path, class: "btn btn-lg btn-danger" %>
 <% end %>
 </section>
