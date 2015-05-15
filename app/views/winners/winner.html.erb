@@ -4,6 +4,7 @@
   <h1><%= @winner.name %></h1>
 <% else %>
   <h1><%= @none %></h1>
+  <%= link_to 'Start Anew?', reset_path, class: 'btn btn-lg' %>
 <% end %>
 
 <% if @winner %>
