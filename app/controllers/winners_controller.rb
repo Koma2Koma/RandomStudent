@@ -31,4 +31,13 @@ class WinnersController < ApplicationController
     end
   end
 
+  def reset
+    students = Student.all
+    students.each do |student|
+      student.wins = 0
+      student.save
+    end
+    redirect_to root_path
+  end
+
 end
